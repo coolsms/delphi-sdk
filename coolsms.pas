@@ -133,7 +133,7 @@ implementation
   constructor resource.Create(key: String; secret: String);
   begin
     https := handler.Create(key, secret);
-    sms_url := 'https://rest1.coolsms.co.kr/sms/1.5/';
-	  senderid_url := 'https://rest1.coolsms.co.kr/senderid/1/';
+    sms_url := 'https://api.coolsms.co.kr/sms/1.5/';
+	senderid_url := 'https://api.coolsms.co.kr/senderid/1.1/';
   end;
 end.

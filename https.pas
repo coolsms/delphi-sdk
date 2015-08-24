@@ -163,6 +163,7 @@ implementation
     http: TIdHTTP;
     jsonObject: TJSONObject;
     data_string, response: String;
+    jsonArray: TJSONArray;
   begin
     http := TIdHTTP.Create();
     jsonObject := TJSONObject.Create;
@@ -179,13 +180,29 @@ implementation
       delete(url, length(url), 1);
       url := TIdURI.URLEncode(url);
       response := http.get(url);
-      jsonObject := TJSONObject.ParseJSONValue(response) as TJSONObject;
-      jsonObject.AddPair(TJSONPair.Create('status', TJSONTrue.Create));
+
+      try
+        jsonObject := TJSONObject.ParseJSONValue(response) as TJSONObject;
+        jsonObject.AddPair(TJSONPair.Create('status', TJSONTrue.Create));
+      except
+        begin
+          try
+            jsonArray := TJSONObject.ParseJSONValue(response) as TJSONArray;
+            jsonObject.AddPair('data', jsonArray);
+            jsonObject.AddPair(TJSONPair.Create('status', TJSONTrue.Create));
+          except
+            on E: Exception do
+            begin
+              jsonObject.AddPair(TJSONPair.Create('status', TJSONFalse.Create));
+              jsonObject.AddPair('message', E.Message);
+            end;
+          end;
+        end;
+      end;
       Result := jsonObject;
     except
       on E: EIdHTTPProtocolException  do
         begin
-          //jsonObject.AddPair(TJSONPair.Create('John','Doe'));
           jsonObject := TJSONObject.ParseJSONValue(E.ErrorMessage) as TJSONObject;
           jsonObject.AddPair(TJSONPair.Create('status', TJSONFalse.Create));
           Result := jsonObject;

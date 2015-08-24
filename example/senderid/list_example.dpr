@@ -24,15 +24,11 @@ begin
 
     // 발신번호 리스트 요청
     jsonObject := coolsms.list();
+
     if strToBool(jsonObject.GetValue('status').ToString) = TRUE then
     begin
       Writeln('성공');
       jsonArray := JsonObject.Get('data').JsonValue as TJSONArray;
-
-      Writeln('total_count : ' + jsonObject.Get('total_count').JsonValue.ToString);
-      Writeln('list_count : ' + jsonObject.Get('list_count').JsonValue.ToString);
-      Writeln('page : ' + jsonObject.Get('page').JsonValue.ToString);
-
       for i := 0 to jsonArray.Size - 1 do
       begin
           jsonObjectData := TJSONObject.Create;
@@ -54,6 +50,7 @@ begin
     end;
 
     jsonObject.Free;
+
 
     Writeln('-----------------------------------------');
     Writeln('Press <enter> to quit...');
