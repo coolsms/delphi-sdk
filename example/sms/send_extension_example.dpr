@@ -40,6 +40,9 @@ begin
     data := TStringList.create;
     data.Values['extension'] := extensionArray.ToString;
 
+	// 10월 16일 이후로 발신번호 사전등록제로 인해 등록된 발신번호로만 문자를 보내실 수 있습니다.
+	data.Values['from'] := '029302266'; // 발신번호
+
     // send Messages
     jsonObject := coolsms.send(data);
     if strToBool(jsonObject.GetValue('status').ToString) = TRUE then

@@ -19,8 +19,10 @@ begin
 
     // parameters
     data := TStringList.create;
-    data.Values['to'] := '01000000000'; // 받는 번호
-    data.Values['from'] := '029302266'; // 보내는 번호
+    data.Values['to'] := '01000000000'; // 수신번호
+
+	// 10월 16일 이후로 발신번호 사전등록제로 인해 등록된 발신번호로만 문자를 보내실 수 있습니다.
+    data.Values['from'] := '029302266'; // 발신번호
     data.Values['text'] := 'test'; // 문자내용
     data.Values['type'] := 'mms';  // 문자타입 sms, mms, lms
     data.Values['image'] := '..\..\test.jpg'; // IMAGE 파일 (MMS일경우)
