@@ -1,21 +1,24 @@
 REST API SDK for Delphi 
 =====================
 
+Delphi SDKëŠ” ë”ì´ìƒ ìœ ì§€ë³´ìˆ˜ ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ì•„ë˜ ë§í¬ë¥¼ í†µí•´ CoolSMSì™€ 100% í†µí•©ëœ SOLAPI API ì„¤ëª… ë¬¸ì„œë¥¼ í†µí•´ ê°œë°œ ì—°ë™ì„ ì§„í–‰í•´ë³´ì„¸ìš”!
+https://developers.solapi.com/references/
+
 Version : 1.1
 
 Registration date : 2015-08-20
 
-Infomation : REST-Delphi´Â REST-API°³³äÀ» »ç¿ëÇÏ¿© º¸´Ù ½±°í ºü¸£°Ô ¹®ÀÚ¼­ºñ½º¸¦ Àü¼ÛÇÒ ¼ö ÀÖ´Â SDKÀÔ´Ï´Ù.
+Infomation : REST-DelphiëŠ” REST-APIê°œë…ì„ ì‚¬ìš©í•˜ì—¬ ë³´ë‹¤ ì‰½ê³  ë¹ ë¥´ê²Œ ë¬¸ìì„œë¹„ìŠ¤ë¥¼ ì „ì†¡í•  ìˆ˜ ìˆëŠ” SDKì…ë‹ˆë‹¤.
 
-License : ±âº»ÀûÀ¸·Î BSD ¶óÀÌ¼¾½º¿¡ µû¶ó ¼Ò½ºÄÚµå¸¦ ¼öÁ¤ ¹× ¹èÆ÷°¡´ÉÇÕ´Ï´Ù.
+License : ê¸°ë³¸ì ìœ¼ë¡œ BSD ë¼ì´ì„¼ìŠ¤ì— ë”°ë¼ ì†ŒìŠ¤ì½”ë“œë¥¼ ìˆ˜ì • ë° ë°°í¬ê°€ëŠ¥í•©ë‹ˆë‹¤.
 
-Contributing : ¿¹Á¦ ÆÄÀÏµéÀº console applicationÀ¸·Î ¸¸µé¾î Á³½À´Ï´Ù. 
+Contributing : ì˜ˆì œ íŒŒì¼ë“¤ì€ console applicationìœ¼ë¡œ ë§Œë“¤ì–´ ì¡ŒìŠµë‹ˆë‹¤. 
 
 Contributing URL : http://www.coolsms.co.kr/SDK_delphi_ko
 
 File composition : 
 
-	coolsms.pas                         coolsms.pas
+	coolsms.pas                                                     coolsms.pas
 	https.pas							https Request
 	example								sms, senderid example files
 	README.txt 							Info	
